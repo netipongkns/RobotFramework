@@ -4,6 +4,7 @@ Library    SeleniumLibrary
 Resource    ../../Valiable/Login_validate_var/Var_Login.robot
 Resource    ../../Keyword/Login/Keyword_login_validate.robot
 
+
 *** Test Cases ***  
 Login Vlidable
     Set Selenium Speed    0.2s
@@ -16,7 +17,7 @@ Login Vlidable
     Page Should Contain    Success
     Capture Page Screenshot
     Close Browser
-
+    
 
 Test Invalid USerName
     Set Selenium Speed    0.5s
@@ -30,7 +31,7 @@ Test Invalid USerName
     Capture Element Screenshot    //*[@id="error"]
     Close Browser
 
-Login Pattern USername
+Login Pattern Username
     Set Selenium Speed    0.2s
     [Documentation]    TestLogin Username
     Open Browser    ${LinkWeb}    chrome
@@ -43,3 +44,14 @@ Login Pattern USername
     Capture Page Screenshot
     Close Browser
 
+Login Pattern Password
+    Set Selenium Speed    0.2s
+    [Documentation]    TestLogin Username
+    Open Browser    ${LinkWeb}    chrome
+    Page Should Contain    Test login
+    Insert Password    Password123
+    format Password
+    Submit Button
+    Capture Page Screenshot
+    Close Browser
+    
